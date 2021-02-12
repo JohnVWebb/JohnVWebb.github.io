@@ -17,6 +17,7 @@
                 <div class="row justify-content-center text-center">
                     <div class="col-12">
                         <h1>Cheese:<span id='playerCheeseAmount'></span></h1>
+                        <h1>Multiplier:<span id='playerMultiplier'></span></h1>
                     </div>
                 </div>
             </div>
@@ -24,7 +25,19 @@
 
       <main>
           <div class="container-fluid">
-                <div class="row justify-content-end">
+                <div class="row justify-content-start">
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body bg-secondary text-light text-left">
+                                <h2 class="text-center">Upgrades</h2>
+                                <span>Pickaxe:</span><span id='pickaxeAmount'></span><br>
+                                <span>Mining Laser:</span><span id='miningLaserAmount'></span><br>                               
+                                <span>Rover:</span><span id='roverAmount'></span><br>
+                                <span>Lunar Base:</span><span id='lunarBaseAmount'></span>
+                                
+                            </div>
+                          </div>
+                    </div>
                     <div class="col-6">
                         <img src="https://pngimg.com/uploads/moon/moon_PNG36.png" onclick="mine()" class="img-fluid" alt="moon">
                     </div>
@@ -33,9 +46,13 @@
                             <div class="card-body bg-secondary text-light text-left">
                                 <h2 class="text-center">Prices</h2>
                                 <span>Pickaxe:</span><span id='pickaxePrice'></span><br>
+                                <span>Multiplier:</span><span id='pickaxeMultiplier'></span><br>
                                 <span>Mining Laser:</span><span id='miningLaserPrice'></span><br>
+                                <span>Multiplier:</span><span id='miningLaserMultiplier'></span><br>
                                 <span>Rover:</span><span id='roverPrice'></span><br>
+                                <span>Multiplier:</span><span id='roverMultiplier'></span><br>
                                 <span>Lunar Base:</span><span id='lunarBasePrice'></span>
+                                <span>Multiplier:</span><span id='lunarBaseMultiplier'></span>
                             </div>
                           </div>
                     </div>
