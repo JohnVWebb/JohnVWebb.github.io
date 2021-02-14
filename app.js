@@ -3,40 +3,48 @@ let mineModifier = 0
 
 let clickUpgrades = {
     pickaxe: {
-        price: 10,
+        price: 50,
         quantity: 0,
-        multiplier: 1
+        multiplier: 2
     },
     miningLaser: {
-        price: 25,
+        price: 100,
         quantity: 0,
-        multiplier: 5
+        multiplier: 10
     }
 }
 
 let automaticUpgrades = {
     rover: {
-        price: 50,
+        price: 500,
         quantity: 0,
-        multiplier: 10
+        multiplier: 20
     },
     lunarBase: {
-        price: 100,
+        price: 1000,
         quantity: 0,
-        multiplier: 25
+        multiplier: 40
     }
 }
 
 function mine(){
-    cheese += 1
+    if(mineModifier < 1){
+        cheese++
+    } else{
+        cheese += mineModifier
+    }
     update()
+}
+
+function autoMine(){
+    setInterval(mine,3000)
 }
 
 function buyPickaxe(){
     if( cheese >= clickUpgrades.pickaxe.price){
     clickUpgrades.pickaxe.quantity++
     cheese -= clickUpgrades.pickaxe.price
-    clickUpgrades.pickaxe.price += 5
+    clickUpgrades.pickaxe.price += 25
     mineModifier += clickUpgrades.pickaxe.multiplier
     }
     update()
@@ -46,7 +54,7 @@ function buyMiningLaser(){
     if( cheese >= clickUpgrades.miningLaser.price){
     clickUpgrades.miningLaser.quantity++
     cheese -= clickUpgrades.miningLaser.price
-    clickUpgrades.miningLaser.price += 10
+    clickUpgrades.miningLaser.price += 50
     mineModifier += clickUpgrades.miningLaser.multiplier
     }
     update()
@@ -56,9 +64,10 @@ function buyRover(){
     if( cheese >= automaticUpgrades.rover.price){
     automaticUpgrades.rover.quantity++
     cheese -= automaticUpgrades.rover.price
-    automaticUpgrades.rover.price += 25
+    automaticUpgrades.rover.price += 250
     mineModifier += automaticUpgrades.rover.multiplier
     }
+    autoMine()
     update()
 }
 
@@ -66,9 +75,10 @@ function buyLunarBase(){
     if( cheese >= automaticUpgrades.lunarBase.price){
     automaticUpgrades.lunarBase.quantity++
     cheese -= automaticUpgrades.lunarBase.price
-    automaticUpgrades.lunarBase.price += 50
+    automaticUpgrades.lunarBase.price += 500
     mineModifier += automaticUpgrades.lunarBase.multiplier
     }
+    autoMine()
     update()
 }
 
